@@ -21,7 +21,12 @@ for y in range(1,nr_symbols+1):
 for z in range(1,nr_numbers+1):
   zz=random.randint(0,len(numbers)-1)
   finalPwd+=numbers[zz]
-print(finalPwd)
+print("Easy Sequential Randomised Password:- "+finalPwd)
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+#The only thing we have to do is that we just have to shuffle the finalPwd characters
+l = list(finalPwd)
+random.shuffle(l)
+result = ''.join(l)
+print("Hard Randomized Password:- "+result)

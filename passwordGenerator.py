@@ -9,7 +9,7 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Eazy Level - Order not randomised:
+#Easy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 finalPwd=""
 for x in range(1,nr_letters+1):
@@ -28,5 +28,8 @@ print("Easy Sequential Randomised Password:- "+finalPwd)
 #The only thing we have to do is that we just have to shuffle the finalPwd characters
 l = list(finalPwd)
 random.shuffle(l)
-result = ''.join(l)
-print("Hard Randomized Password:- "+result)
+ans = ''.join(l)#This is just the way to convert list into string in the variable ans
+#If not we can just use the for loop to convert the list into string by just adding the character into the variable ans
+#for x in l:
+#  ans+=x
+print("Hard Randomized Password:- "+ans)

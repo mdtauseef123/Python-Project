@@ -1,3 +1,4 @@
+from replit import clear
 import random
 import hangman_art
 import hangman_words
@@ -21,6 +22,7 @@ prev=""
 flag=0
 while ctr!=len(chosen_word) and lives!=-1:
 	guess=input("Guess a letter: ").lower()
+	clear()
 	#If the correct guess is repeated then only we will throw the message and doesn't count it
 	if prev==guess:
 		print(f"You have already guessed {guess}")

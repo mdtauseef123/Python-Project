@@ -16,8 +16,9 @@ for i in range(0,len(chosen_word)):
 print("Word Format:-")
 print(''.join(display))
 ctr=0
-lives=6
+lives=7
 prev=""
+flag=0
 while ctr!=len(chosen_word) and lives!=-1:
 	guess=input("Guess a letter: ").lower()
 	#If the correct guess is repeated then only we will throw the message and doesn't count it
@@ -27,11 +28,11 @@ while ctr!=len(chosen_word) and lives!=-1:
 	else:
 		prev=guess
 	if not guess in chosen_word:
-		print("Wrong Guess")
-		print(stages[lives])
+		print(f"You guessed {guess}, that's not in the word. You lose a life.")
+		flag=1
 		lives-=1
 		if lives!=-1:
-			print(f"{lives} Lives remaining")
+			print(f"{lives-1} Lives remaining")
 	else:
 		for j in range(0,len(chosen_word)):
 			if guess==chosen_word[j]:
@@ -39,6 +40,9 @@ while ctr!=len(chosen_word) and lives!=-1:
 				display[j]=guess
 		ans=''.join(display)
 		print(ans)
+	#Once user predicted wrong answer then we will always print the stages
+	if flag==1:
+		print(stages[lives])
 if ctr!=len(chosen_word):
 	print("You Loose")
 else:

@@ -57,3 +57,4 @@ while choice:
 	ask=input("Do you want to continue?Type 'yes' if you want to go again otherwise type 'no'")
 	if ask=="no":
 		choice=False
+print("GoodBye")

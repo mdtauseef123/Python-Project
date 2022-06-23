@@ -28,6 +28,7 @@ while gameContinue:
 		score+=1
 		gameContinue=True
 		os.system('clear')
+		print(art.logo)
 		print(f"You\'re right! Current score: {score}.")
 		firstData=secondData
 	else:
